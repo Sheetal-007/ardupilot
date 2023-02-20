@@ -47,7 +47,7 @@ static Thruster vectored_6dof_thrusters[] =
        Thruster(7,          -1.0f,          1.0f,           0,              -1.0f,              0,                  0)
 };
 
-static Thruster Custom[] =
+static Thruster custom[] =
 {
        //       Motor #     Roll Factor     Pitch Factor    Yaw Factor      Throttle Factor     Forward Factor      Lateral Factor
        Thruster(0,          0,              0,              1.0f,           0,                  -1.0f,              1.0f),
@@ -73,8 +73,9 @@ Submarine::Submarine(const char *frame_str) :
     if (strstr(frame_str, "vectored_6dof")) {
         thrusters = vectored_6dof_thrusters;
         n_thrusters = 8;
+    }
         
-    else (strstr(frame_str, "custom")) {
+    elseif (strstr(frame_str, "custom")) {
         thrusters = custom;
         n_thrusters = 7;  
     }
